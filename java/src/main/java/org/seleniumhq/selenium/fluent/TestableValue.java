@@ -51,7 +51,7 @@ public class TestableValue<T> extends Internal.BaseTestableObject<T> {
     private class GetValueValidation extends Internal.Validation {
         @Override
         public void validate(long start) {
-            if (is != null) {
+            if (is != "null") {
                 return;
             }
             is = execution.doExecution();

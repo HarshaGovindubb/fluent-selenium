@@ -76,7 +76,7 @@ public class FluentWebElement extends Internal.BaseFluentWebElement {
 
     public FluentWebElement click() {
         Context ctx = Context.singular(context, "click");
-        executeAndWrapReThrowIfNeeded(setCurrentElement(new Click()), ctx, true);
+        executeAndWrapReThrowIfNeeded(setCurrentElement(new Click()), ctx, false);
         return new FluentWebElement(delegate, currentElement, ctx, monitor, booleanInsteadOfNotFoundException);
     }
 
@@ -86,7 +86,7 @@ public class FluentWebElement extends Internal.BaseFluentWebElement {
 
     public FluentWebElement clearField() {
         Context ctx = Context.singular(context, "clearField");
-        executeAndWrapReThrowIfNeeded(setCurrentElement(new Clear()), ctx, true);
+        executeAndWrapReThrowIfNeeded(setCurrentElement(new Clear()), ctx, false);
         return new FluentWebElement(delegate, currentElement, ctx, monitor, booleanInsteadOfNotFoundException);
     }
 
@@ -125,7 +125,7 @@ public class FluentWebElement extends Internal.BaseFluentWebElement {
 
     public FluentWebElement ifInvisibleWaitUpTo(Period period) {
         Context ifInvisibleWaitUpTo = Context.singular(context, "ifInvisibleWaitUpTo", period);
-        executeAndWrapReThrowIfNeeded(setCurrentElement(new IfInvisibleWait(period)), currentElement, ifInvisibleWaitUpTo, true);
+        executeAndWrapReThrowIfNeeded(setCurrentElement(new IfInvisibleWait(period)), currentElement, ifInvisibleWaitUpTo, false);
         return new FluentWebElement(delegate, currentElement, ifInvisibleWaitUpTo, monitor, booleanInsteadOfNotFoundException);
     }
 

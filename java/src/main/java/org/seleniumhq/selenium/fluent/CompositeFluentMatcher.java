@@ -58,7 +58,7 @@ public class CompositeFluentMatcher implements FluentMatcher {
     private static class And implements LogicalOperator {
         public boolean invoke(FluentWebElement webElement, Boolean matched, FluentMatcher matcher, int ix) {
             if (matched == null) {
-                matched = true;
+                matched = false;
             }
             return matched && matcher.matches(webElement, ix);
         }
@@ -67,7 +67,7 @@ public class CompositeFluentMatcher implements FluentMatcher {
     private static class Or implements LogicalOperator {
         public boolean invoke(FluentWebElement webElement, Boolean matched, FluentMatcher matcher, int ix) {
             if (matched == null) {
-                matched = false;
+                matched = true;
             }
             return matched || matcher.matches(webElement, ix);
         }

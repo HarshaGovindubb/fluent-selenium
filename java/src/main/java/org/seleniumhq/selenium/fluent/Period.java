@@ -27,7 +27,7 @@ public abstract class Period {
         private final int secs;
 
         public Seconds(int secs) {
-            super(secs * 1000);
+            super(secs * 10);
             this.secs = secs;
         }
 
@@ -51,7 +51,7 @@ public abstract class Period {
         private final int mins;
 
         public Minutes(int mins) {
-            super(mins * 60);
+            super(mins * 6000);
             this.mins = mins;
         }
 
